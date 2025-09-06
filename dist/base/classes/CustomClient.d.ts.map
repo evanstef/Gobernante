@@ -1,0 +1,1 @@
+{"version":3,"file":"CustomClient.d.ts","sourceRoot":"","sources":["../../../src/base/classes/CustomClient.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAE,MAAM,YAAY,CAAC;AACpC,OAAO,KAAK,aAAa,MAAM,gCAAgC,CAAC;AAChE,OAAO,KAAK,OAAO,MAAM,0BAA0B,CAAC;AAGpD,MAAM,CAAC,OAAO,OAAO,YAAa,SAAQ,MAAO,YAAW,aAAa;IACvE,MAAM,EAAE,OAAO,CAAC;;IAOhB,IAAI,IAAI,IAAI;CAKb"}

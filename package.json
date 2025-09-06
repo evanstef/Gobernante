@@ -1,0 +1,28 @@
+{
+  "name": "bot-anjing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf build",
+    "build": "tsc --build",
+    "start": "npm run clean && npm run build && node build/index.js",
+    "startNoClean": "npm run build && node build/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google/genai": "^1.16.0",
+    "@google/generative-ai": "^0.24.1",
+    "discord": "^0.8.2",
+    "discord.js": "^14.22.1",
+    "dotenv": "^17.2.1",
+    "glob": "^11.0.3",
+    "js": "^0.1.0",
+    "mongoose": "^8.18.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^24.3.0"
+  }
+}

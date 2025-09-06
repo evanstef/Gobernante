@@ -1,0 +1,1 @@
+{"version":3,"file":"MessageCreate.d.ts","sourceRoot":"","sources":["../../../src/events/guild/MessageCreate.ts"],"names":[],"mappings":"AAAA,OAAO,EAAU,OAAO,EAAE,MAAM,YAAY,CAAC;AAC7C,OAAO,KAAK,YAAY,MAAM,oCAAoC,CAAC;AACnE,OAAO,KAAK,MAAM,6BAA6B,CAAC;AAEhD,MAAM,CAAC,OAAO,OAAO,aAAc,SAAQ,KAAK;gBAClC,MAAM,EAAE,YAAY;IAQ1B,OAAO,CAAC,OAAO,EAAE,OAAO;CA0C/B"}
