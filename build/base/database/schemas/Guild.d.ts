@@ -4,11 +4,25 @@ declare const Guild: mongoose.Model<{
     updatedAt: NativeDate;
 } & {
     guildId: string;
+    welcomeGoodbyeChannelId: string;
+    logs?: {
+        moderation?: {
+            channelId?: string | null;
+            enabled?: boolean | null;
+        } | null;
+    } | null;
 }, {}, {}, {}, mongoose.Document<unknown, {}, {
     createdAt: NativeDate;
     updatedAt: NativeDate;
 } & {
     guildId: string;
+    welcomeGoodbyeChannelId: string;
+    logs?: {
+        moderation?: {
+            channelId?: string | null;
+            enabled?: boolean | null;
+        } | null;
+    } | null;
 }, {}, {
     timestamps: true;
 }> & {
@@ -16,6 +30,13 @@ declare const Guild: mongoose.Model<{
     updatedAt: NativeDate;
 } & {
     guildId: string;
+    welcomeGoodbyeChannelId: string;
+    logs?: {
+        moderation?: {
+            channelId?: string | null;
+            enabled?: boolean | null;
+        } | null;
+    } | null;
 } & {
     _id: mongoose.Types.ObjectId;
 } & {
@@ -27,11 +48,25 @@ declare const Guild: mongoose.Model<{
     updatedAt: NativeDate;
 } & {
     guildId: string;
+    welcomeGoodbyeChannelId: string;
+    logs?: {
+        moderation?: {
+            channelId?: string | null;
+            enabled?: boolean | null;
+        } | null;
+    } | null;
 }, mongoose.Document<unknown, {}, mongoose.FlatRecord<{
     createdAt: NativeDate;
     updatedAt: NativeDate;
 } & {
     guildId: string;
+    welcomeGoodbyeChannelId: string;
+    logs?: {
+        moderation?: {
+            channelId?: string | null;
+            enabled?: boolean | null;
+        } | null;
+    } | null;
 }>, {}, mongoose.ResolveSchemaOptions<{
     timestamps: true;
 }>> & mongoose.FlatRecord<{
@@ -39,6 +74,13 @@ declare const Guild: mongoose.Model<{
     updatedAt: NativeDate;
 } & {
     guildId: string;
+    welcomeGoodbyeChannelId: string;
+    logs?: {
+        moderation?: {
+            channelId?: string | null;
+            enabled?: boolean | null;
+        } | null;
+    } | null;
 }> & {
     _id: mongoose.Types.ObjectId;
 } & {

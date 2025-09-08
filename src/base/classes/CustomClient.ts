@@ -21,6 +21,7 @@ export default class CustomClient extends Client implements ICustomClient {
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages, // <-- WAJIB untuk menerima pesan
         GatewayIntentBits.MessageContent,
+        GatewayIntentBits.GuildMembers,
       ],
     });
     this.config = {

@@ -12,6 +12,7 @@ const guildSchema = new Schema(
         channelId: String,
       },
     },
+    welcomeGoodbyeChannelId: { type: String, default: null },
   },
   {
     timestamps: true,

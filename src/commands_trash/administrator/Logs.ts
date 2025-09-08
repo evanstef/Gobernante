@@ -15,14 +15,13 @@ export default class Logs extends Command {
       category: Category.Administrator,
       default_member_permissions: PermissionFlagsBits.Administrator.toString(),
       dm_permission: false,
-      cooldown: 1,
+      cooldown: 3,
       client: client,
       options: [
         {
-          name: "toogle",
+          name: "toggle",
           description: "Toggle untuk logs channel",
           type: ApplicationCommandOptionType.Subcommand,
-          required: true,
           options: [
             {
               name: "log-type",
@@ -46,9 +45,8 @@ export default class Logs extends Command {
         },
         {
           name: "set",
-          description: "set untuk logs channel",
+          description: "Set untuk logs channel",
           type: ApplicationCommandOptionType.Subcommand,
-          required: true,
           options: [
             {
               name: "log-type",
