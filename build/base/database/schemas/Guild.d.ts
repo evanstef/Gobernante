@@ -5,6 +5,7 @@ declare const Guild: mongoose.Model<{
 } & {
     guildId: string;
     welcomeGoodbyeChannelId: string;
+    userLogsChannelId: string;
     logs?: {
         moderation?: {
             channelId?: string | null;
@@ -17,6 +18,7 @@ declare const Guild: mongoose.Model<{
 } & {
     guildId: string;
     welcomeGoodbyeChannelId: string;
+    userLogsChannelId: string;
     logs?: {
         moderation?: {
             channelId?: string | null;
@@ -31,6 +33,7 @@ declare const Guild: mongoose.Model<{
 } & {
     guildId: string;
     welcomeGoodbyeChannelId: string;
+    userLogsChannelId: string;
     logs?: {
         moderation?: {
             channelId?: string | null;
@@ -49,6 +52,7 @@ declare const Guild: mongoose.Model<{
 } & {
     guildId: string;
     welcomeGoodbyeChannelId: string;
+    userLogsChannelId: string;
     logs?: {
         moderation?: {
             channelId?: string | null;
@@ -61,6 +65,7 @@ declare const Guild: mongoose.Model<{
 } & {
     guildId: string;
     welcomeGoodbyeChannelId: string;
+    userLogsChannelId: string;
     logs?: {
         moderation?: {
             channelId?: string | null;
@@ -75,6 +80,7 @@ declare const Guild: mongoose.Model<{
 } & {
     guildId: string;
     welcomeGoodbyeChannelId: string;
+    userLogsChannelId: string;
     logs?: {
         moderation?: {
             channelId?: string | null;

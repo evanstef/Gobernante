@@ -23,8 +23,8 @@ export default class GuildMemberRemove extends Event {
                 name: `${member.user.tag} telah keluar.`,
                 iconURL: member.user.displayAvatarURL(),
             })
-                .setDescription(`Sana lah kau, **${member.user.username}**.Jangan balik lagi ya anjing!`)
-                .setThumbnail(member.user.displayAvatarURL())
+                .setDescription(`Sana lah kau, **${member}**.Jangan balik lagi ya anjing!`)
+                .setThumbnail(member.guild.iconURL())
                 .setFooter({
                 text: `sisa ${member.guild.memberCount} anggota.`,
             })

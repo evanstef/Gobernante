@@ -29,7 +29,7 @@ export default class GuildMemberRemove extends Event {
           iconURL: member.user.displayAvatarURL(),
         })
         .setDescription(
-          `Sana lah kau, **${member.user.username}**.Jangan balik lagi ya anjing!`
+          `Sana lah kau, **${member}**.Jangan balik lagi ya anjing!`
         )
         .setThumbnail(member.guild.iconURL())
         .setFooter({

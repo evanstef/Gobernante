@@ -10,6 +10,7 @@ const guildSchema = new Schema({
         },
     },
     welcomeGoodbyeChannelId: { type: String, default: null },
+    userLogsChannelId: { type: String, default: null },
 }, {
     timestamps: true,
 });
