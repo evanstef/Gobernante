@@ -31,7 +31,7 @@ export default class GuildMemberRemove extends Event {
         .setDescription(
           `Sana lah kau, **${member.user.username}**.Jangan balik lagi ya anjing!`
         )
-        .setThumbnail(member.user.displayAvatarURL())
+        .setThumbnail(member.guild.iconURL())
         .setFooter({
           text: `sisa ${member.guild.memberCount} anggota.`,
         })
