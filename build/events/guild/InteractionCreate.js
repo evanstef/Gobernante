@@ -25,7 +25,7 @@ export default class InteractionCreate extends Event {
             cooldowns.set(command.name, new Collection());
         const now = Date.now();
         const timestamps = cooldowns.get(command.name);
-        const cooldownAmount = (command.cooldown || 3) * 1000;
+        const cooldownAmount = command.cooldown * 1000;
         if (timestamps?.has(interaction.user.id) &&
             now < (timestamps.get(interaction.user.id) || 0) + cooldownAmount) {
             return interaction.reply({

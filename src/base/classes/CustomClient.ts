@@ -6,14 +6,16 @@ import Handler from "./Handler.js";
 import type Command from "./Command.js";
 import type SubCommand from "./SubCommand.js";
 import { connect } from "mongoose";
+import type { AudioPlayer } from "@discordjs/voice";
 
 export default class CustomClient extends Client implements ICustomClient {
   handler: Handler;
   config: IConfig;
-
   commands: Collection<string, Command>;
   subCommands: Collection<string, SubCommand>;
   cooldowns: Collection<string, Collection<string, number>>;
+  queues: Collection<string, any>;
+  players: Collection<string, AudioPlayer>;
 
   constructor() {
     super({
@@ -22,6 +24,7 @@ export default class CustomClient extends Client implements ICustomClient {
         GatewayIntentBits.GuildMessages, // <-- WAJIB untuk menerima pesan
         GatewayIntentBits.MessageContent,
         GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildVoiceStates,
       ],
     });
     this.config = {
@@ -30,6 +33,8 @@ export default class CustomClient extends Client implements ICustomClient {
       guildId: GUILD_ID as string,
       mongoUrl: MONGO_URL as string,
     } as IConfig;
+    this.queues = new Collection();
+    this.players = new Collection();
     this.handler = new Handler(this);
     this.commands = new Collection();
     this.subCommands = new Collection();

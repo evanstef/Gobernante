@@ -39,27 +39,6 @@ export default class UserUpdate extends Event {
                         .setThumbnail(newUser.displayAvatarURL({ size: 128 })); // Tampilkan avatar LAMA untuk perbandingan
                     await channel.send({ embeds: [avatarEmbed] });
                 }
-                if (oldUser.tag !== newUser.tag) {
-                    const usernameEmbed = new EmbedBuilder()
-                        .setAuthor({
-                        name: newUser.username,
-                        iconURL: newUser.displayAvatarURL(),
-                    })
-                        .setFooter({ text: `ID: ${newUser.id}` })
-                        .setTimestamp()
-                        .setColor("Green")
-                        .setTitle("Ciee ganti username") // Kata-kata Anda
-                        .addFields({
-                        name: "Sebelum",
-                        value: `\`${oldUser.tag || "Tidak ada"}\``,
-                        inline: true,
-                    }, {
-                        name: "Sesudah",
-                        value: `\`${newUser.tag || "Tidak ada"}\``,
-                        inline: true,
-                    });
-                    await channel.send({ embeds: [usernameEmbed] });
-                }
             }
             catch (error) {
                 console.error(`Error pada event userUpdate di server ${guild.name}:`, error);

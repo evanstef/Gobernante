@@ -3,6 +3,7 @@ import type Handler from "../classes/Handler.js";
 import type IConfig from "./IConfig.js";
 import type Command from "../classes/Command.js";
 import type SubCommand from "../classes/SubCommand.js";
+import type { AudioPlayer } from "@discordjs/voice";
 
 export default interface ICustomClient {
   handler: Handler;
@@ -10,6 +11,8 @@ export default interface ICustomClient {
   commands: Collection<string, Command>;
   subCommands: Collection<string, SubCommand>;
   cooldowns: Collection<string, Collection<string, number>>;
+  queues: Collection<string, any>;
+  players: Collection<string, AudioPlayer>;
   Init(): void;
   loadHandler(): void;
 }

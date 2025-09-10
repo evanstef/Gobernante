@@ -8,6 +8,8 @@ export default class CustomClient extends Client {
     commands;
     subCommands;
     cooldowns;
+    queues;
+    players;
     constructor() {
         super({
             intents: [
@@ -15,6 +17,7 @@ export default class CustomClient extends Client {
                 GatewayIntentBits.GuildMessages, // <-- WAJIB untuk menerima pesan
                 GatewayIntentBits.MessageContent,
                 GatewayIntentBits.GuildMembers,
+                GatewayIntentBits.GuildVoiceStates,
             ],
         });
         this.config = {
@@ -23,6 +26,8 @@ export default class CustomClient extends Client {
             guildId: GUILD_ID,
             mongoUrl: MONGO_URL,
         };
+        this.queues = new Collection();
+        this.players = new Collection();
         this.handler = new Handler(this);
         this.commands = new Collection();
         this.subCommands = new Collection();
