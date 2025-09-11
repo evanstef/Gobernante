@@ -43,7 +43,7 @@ export default class Tanya extends SubCommand {
         await interaction.reply("⏱️ Mikir dulu yah....");
       }
 
-      const jawabanAi = await ChatAi(pertanyaan);
+      const jawabanAi = await ChatAi(pertanyaan, interaction.guild);
 
       if (isInteraction) {
         await interaction.editReply(jawabanAi);

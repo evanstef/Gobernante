@@ -4,7 +4,7 @@ import Category from "../../base/enums/Category.js";
 import { AudioPlayerStatus, createAudioPlayer, createAudioResource, joinVoiceChannel, } from "@discordjs/voice";
 import ytdl from "@distube/ytdl-core";
 import ytSearch from "yt-search";
-const IDLE_TIMEOUT = 300000; // 5 menit
+const IDLE_TIMEOUT = 3 * 60 * 1000; // 3 menit
 export default class PlayMusic extends Command {
     constructor(client) {
         super(client, {
