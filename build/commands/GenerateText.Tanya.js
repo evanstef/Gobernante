@@ -17,26 +17,15 @@ export default class Tanya extends SubCommand {
             }
             if (!pertanyaan) {
                 const errorMsg = "Anda harus menyertakan pertanyaan!";
-                if (isInteraction) {
-                    await interaction.reply({ content: errorMsg, ephemeral: true });
-                }
-                else {
-                    await interaction.reply(errorMsg);
-                }
+                await interaction.reply({ content: errorMsg, ephemeral: true });
                 return;
             }
             if (isInteraction) {
                 await interaction.deferReply();
             }
-            else {
-                await interaction.reply("⏱️ Mikir dulu yah....");
-            }
             const jawabanAi = await ChatAi(pertanyaan, interaction.guild);
             if (isInteraction) {
                 await interaction.editReply(jawabanAi);
-            }
-            else {
-                await interaction.reply(jawabanAi);
             }
         }
         catch (error) {
@@ -50,9 +39,6 @@ export default class Tanya extends SubCommand {
             });
             if (interaction instanceof ChatInputCommandInteraction) {
                 await interaction.editReply({ embeds: [embeds] });
-            }
-            else {
-                await interaction.reply({ embeds: [embeds] });
             }
         }
     }

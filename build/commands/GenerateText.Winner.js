@@ -5,15 +5,9 @@ export default class Winner extends SubCommand {
         super(client, "text.winner");
     }
     async Execute(interaction) {
-        if ("deferReply" in interaction) {
-            await interaction.deferReply();
-            const text = await ChatAi("Buatkan satu kalimat lumayan panjang dan tajam sebagai ejekan kemenangan yang agak kasar dalam bahasa Indonesia dengan bahasa yang tidak formal atau santai lu gue gitu misalnya. Balas HANYA dengan kalimat ejekannya saja, tanpa basa-basi atau format Markdown.", interaction.guild);
-            await interaction.editReply(text);
-        }
-        else {
-            const text = await ChatAi("Buatkan satu kalimat lumayan panjang dan tajam sebagai ejekan kemenangan yang agak kasar dalam bahasa Indonesia dengan bahasa yang tidak formal atau santai lu gue gitu misalnya. Balas HANYA dengan kalimat ejekannya saja, tanpa basa-basi atau format Markdown.", interaction.guild);
-            interaction.reply(text);
-        }
+        await interaction.deferReply();
+        const text = await ChatAi("Buatkan satu kalimat lumayan panjang dan tajam sebagai ejekan kemenangan yang agak kasar dalam bahasa Indonesia dengan bahasa yang tidak formal atau santai lu gue gitu misalnya. Balas HANYA dengan kalimat ejekannya saja, tanpa basa-basi atau format Markdown.", interaction.guild);
+        await interaction.editReply(text);
     }
 }
 //# sourceMappingURL=GenerateText.Winner.js.map

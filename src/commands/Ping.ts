@@ -24,17 +24,13 @@ export default class Ping extends Command {
     });
   }
 
-  async Execute(
-    intercation: ChatInputCommandInteraction | Message
-  ): Promise<void> {
+  async Execute(intercation: ChatInputCommandInteraction): Promise<void> {
     const isInteraction = intercation instanceof ChatInputCommandInteraction;
 
-    const initialReply = isInteraction
-      ? await intercation.reply({
-          content: "🏓 Sabar yah...",
-          fetchReply: true,
-        })
-      : await intercation.reply({ content: "🏓 Sabar yah..." });
+    const initialReply = await intercation.reply({
+      content: "🏓 Sabar yah...",
+      fetchReply: true,
+    });
 
     const apiLatency = Math.round(this.client.ws.ping);
     const botLatency =
@@ -61,8 +57,6 @@ export default class Ping extends Command {
         content: "",
         embeds: [embed],
       });
-    } else {
-      await initialReply.edit({ content: "", embeds: [embed] });
     }
   }
 }

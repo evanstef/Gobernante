@@ -1,4 +1,4 @@
-import type { ChatInputCommandInteraction, AutocompleteInteraction, Message } from "discord.js";
+import type { ChatInputCommandInteraction, AutocompleteInteraction } from "discord.js";
 import type Category from "../enums/Category.js";
 import type ICommand from "../interfaces/ICommand.js";
 import type CustomClient from "./CustomClient.js";
@@ -12,7 +12,7 @@ export default class Command implements ICommand {
     dm_permission: boolean;
     cooldown: number;
     constructor(client: CustomClient, commandOptions: ICommand);
-    Execute(interaction: ChatInputCommandInteraction | Message, args?: string[]): void;
+    Execute(interaction: ChatInputCommandInteraction, args?: string[]): void;
     AutoComplete(interaction: AutocompleteInteraction): void;
 }
 //# sourceMappingURL=Command.d.ts.map

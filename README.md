@@ -16,6 +16,10 @@ Tapi lama-lama gw kembangin biar jadi bot 'penguasa' serba bisa di server. Sekar
 
 - **Siapa Saya (Info Bot)**: Bot dapat membalas pesan dengan informasi tentang dirinya, seperti siapa penciptanya dan kapan ia dibuat.
 
+- **Roasting Member**: Bot dapat me-roasting member yang ada di dalam server. saran siapkan mental.
+
+- **Ranking**: Bot dapat menampilkan peringkat member di server semakin banyak mereka mengirim pesan, semakin tinggi level membernya.
+
 - **Perintah Ping**: Bot memiliki perintah ping yang bisa digunakan untuk mengecek latency (jeda waktu) bot.
 
 - **Log Aktivitas Pengguna**: Bot dapat mencatat aktivitas pengguna, seperti saat mereka memperbarui username atau avatar mereka.
@@ -40,6 +44,10 @@ Gw pake "/" command yak soalnya kalo pake "!" udah bot versi lama yang begitu ke
   Menghasilkan kalimat ejekan kemenangan.
 - **`/text loser`**
   Menghasilkan kalimat ejekan kalah.
+- **`/roast member:<member>`**
+  Me-roasting member yang ada di dalam server.(siapkan mental anda)
+- **`/rank`**
+  Menampilkan peringkat member di server.(pesan terbanyak)
 - **`/who-am-i`**
   Menampilkan informasi tentang bot.
 - **`/ping`**

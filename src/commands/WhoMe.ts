@@ -23,7 +23,7 @@ export default class WhoMe extends Command {
     });
   }
 
-  Execute(interaction: ChatInputCommandInteraction | Message): void {
+  Execute(interaction: ChatInputCommandInteraction): void {
     const embed = new EmbedBuilder()
       .setAuthor({
         name: "Link GitHub Si Yapper",

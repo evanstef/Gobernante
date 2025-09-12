@@ -4,5 +4,5 @@ import type ISubCommandOptions from "./ISubCommandOptions.js";
 
 export default interface ISubCommand extends ISubCommandOptions {
   client: CustomClient;
-  Execute(interaction: ChatInputCommandInteraction | Message): void;
+  Execute(interaction: ChatInputCommandInteraction): void;
 }

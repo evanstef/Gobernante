@@ -10,8 +10,5 @@ export default class SubCommand implements ISubCommand {
     this.client = client;
     this.name = name;
   }
-  Execute(
-    interaction: ChatInputCommandInteraction | Message,
-    args?: string[]
-  ): void {}
+  Execute(interaction: ChatInputCommandInteraction, args?: string[]): void {}
 }

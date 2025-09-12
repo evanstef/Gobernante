@@ -5,6 +5,7 @@ var Category;
     Category["Administrator"] = "Administrator";
     Category["Moderation"] = "Moderation";
     Category["Music"] = "Music";
+    Category["Fun"] = "Fun";
 })(Category || (Category = {}));
 export default Category;
 //# sourceMappingURL=Category.js.map

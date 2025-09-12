@@ -4,6 +4,7 @@ enum Category {
   Administrator = "Administrator",
   Moderation = "Moderation",
   Music = "Music",
+  Fun = "Fun",
 }
 
 export default Category;

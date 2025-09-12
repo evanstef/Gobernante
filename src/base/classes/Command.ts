@@ -27,9 +27,6 @@ export default class Command implements ICommand {
     this.cooldown = commandOptions.cooldown;
   }
 
-  Execute(
-    interaction: ChatInputCommandInteraction | Message,
-    args?: string[]
-  ): void {}
+  Execute(interaction: ChatInputCommandInteraction, args?: string[]): void {}
   AutoComplete(interaction: AutocompleteInteraction): void {}
 }
