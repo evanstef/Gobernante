@@ -88,6 +88,7 @@ Gw pake "/" command yak soalnya kalo pake "!" udah bot versi lama yang begitu ke
     CLIENT_ID=<DISCORD_CLIENT_ID>
     GEMINI_API_KEY=<API_KEY>
     DATABASE_URL=<mongodb_url>
+    OWNER_ID=<DISCORD_OWNER_ID>
     ```
 
 4.  **Udah deh jalankan bot**
@@ -109,6 +110,7 @@ Gw pake "/" command yak soalnya kalo pake "!" udah bot versi lama yang begitu ke
     CLIENT_ID=<DISCORD_CLIENT_ID>
     GEMINI_API_KEY=<API_KEY>
     DATABASE_URL=<mongodb_url>
+    OWNER_ID=<DISCORD_OWNER_ID>
     ```
 
 3.  **Udah deh jalankan bot**
