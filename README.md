@@ -38,6 +38,8 @@ Gw pake "/" command yak soalnya kalo pake "!" udah bot versi lama yang begitu ke
   Menghentikan musik yang sedang diputar.
 - **`/skip`**
   Melewati musik yang sedang diputar.
+- **`/queue`**
+  Menampilkan lagu yand saat ini diputar dan di dalam antrian.
 - **`/text tanya pertanyaan:<text_pertanyaan>`**
   Mengajukan pertanyaan apa pun ke AI. Bot akan menjawab berdasarkan konteks yang telah diberikan (info server, pencipta, dll.).
 - **`/text winner`**
