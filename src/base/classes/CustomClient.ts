@@ -21,10 +21,11 @@ export default class CustomClient extends Client implements ICustomClient {
     super({
       intents: [
         GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMessages, // <-- WAJIB untuk menerima pesan
+        GatewayIntentBits.GuildMessages,
         GatewayIntentBits.MessageContent,
         GatewayIntentBits.GuildMembers,
         GatewayIntentBits.GuildVoiceStates,
+        GatewayIntentBits.GuildPresences,
       ],
     });
     this.config = {
