@@ -14,6 +14,8 @@ Tapi lama-lama gw kembangin biar jadi bot 'penguasa' serba bisa di server. Sekar
 
 - **Pemutar Musik**: Bot dapat memutar, melewati (skip), dan menghentikan (stop) musik di dalam voice channel.
 
+- **List Server**: Bot dapat menampilkan daftar server di mana bot berada.
+
 - **Siapa Saya (Info Bot)**: Bot dapat membalas pesan dengan informasi tentang dirinya, seperti siapa penciptanya dan kapan ia dibuat.
 
 - **Roasting Member**: Bot dapat me-roasting member yang ada di dalam server. saran siapkan mental.
@@ -32,6 +34,8 @@ Gw pake "/" command yak soalnya kalo pake "!" udah bot versi lama yang begitu ke
   Menetapkan channel di mana bot akan mengirim pesan saat ada anggota yang bergabung atau keluar.(**Admin Only**)
 - **`/user-logs setup channel:<channel>`**
   Menetapkan channel di mana bot akan mengirim notifikasi jika ada anggota yang mengubah nickname, username, atau avatar.(**Admin Only**)
+- **`/serverlist`**
+  Menampilkan daftar server di mana bot berada.(**Owner Only**)
 - **`/play song:<judul_atau_url_youtube>`**
   Memutar musik berdasarkan prompt yang diberikan.
 - **`/stop`**
