@@ -4,7 +4,7 @@ Jadi, bot ini namanya Gobernante, artinya 'penguasa' pake bahasa Spanyol. Awalny
 
 Tapi lama-lama gw kembangin biar jadi bot 'penguasa' serba bisa di server. Sekarang fiturnya ada buat nyambut member baru, ngasih tau kalo ada yang ganti nama atau avatar, sampe bisa muter lagu, dan juga lu bisa tanya apa aja sama bot ini ya simple sih cuman pake API Google AI Studio.sebenarnya bot kyk gini udh banyak tapi gw pengen punya satu bot buatan sendiri yang bisa ngelakuin semuanya, jadi server gw sama temen-temen cukup pake satu bot ini aja, hehe.
 
-<span style="color: yellow;">_Catatan: Gw sengaja gak pake hosting luar buat bot ini, jadi murni jalan di PC lokal gw pake Docker. Alasannya simpel: susah cari hosting gratisan wkwkwk mau gratisan. Kalaupun ada, RAM yang ditawarin kecil banget, gak bakal kuat buat nampung semua fitur bot yang mungkin nantinya makin banyak.\*\*_</span>
+<span style="color: yellow;">_Catatan: Gw sengaja gak pake hosting luar buat bot ini, jadi murni jalan di PC lokal gw pake Docker. Alasannya simpel: susah cari hosting gratisan wkwkwk mau gratisan. Kalaupun ada, RAM yang ditawarin kecil banget, gak bakal kuat buat nampung semua fitur bot yang mungkin nantinya makin banyak._</span>
 
 ## Fitur
 
@@ -39,7 +39,7 @@ Gw pake "/" command yak soalnya kalo pake "!" udah bot versi lama yang begitu ke
 - **`/skip`**
   Melewati musik yang sedang diputar.
 - **`/queue`**
-  Menampilkan lagu yand saat ini diputar dan di dalam antrian.
+  Menampilkan lagu yang saat ini diputar dan di dalam antrian.
 - **`/text tanya pertanyaan:<text_pertanyaan>`**
   Mengajukan pertanyaan apa pun ke AI. Bot akan menjawab berdasarkan konteks yang telah diberikan (info server, pencipta, dll.).
 - **`/text winner`**
