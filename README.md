@@ -12,7 +12,7 @@ Tapi lama-lama gw kembangin biar jadi bot 'penguasa' serba bisa di server. Sekar
 
 - **Generator Teks**: Bot dapat menghasilkan teks berdasarkan prompt yang diberikan. Teks yang dihasilkan bisa berupa kalimat sederhana, paragraf, atau bahkan tulisan yang panjang.
 
-- **Pemutar Musik**: Bot dapat memutar, melewati (skip), dan menghentikan (stop) musik di dalam voice channel.
+- **Pemutar Musik**: Bot dapat memutar, melewati (skip), menghentikan (stop), lihat daftar antrian (queue), menghapus lagu tertentu (remove)
 
 - **List Server**: Bot dapat menampilkan daftar server di mana bot berada.
 
@@ -46,8 +46,10 @@ Gw pake "/" command yak soalnya kalo pake "!" udah bot versi lama yang begitu ke
   Menghentikan musik yang sedang diputar.
 - **`/skip`**
   Melewati musik yang sedang diputar.
-- **`/queue`**
+- **`/queue view`**
   Menampilkan daftar musik yang sedang diputar di antrian.
+- **`/queue remove nomor:<nomor_urut_lagu>`**
+  Menghapus lagu tertentu dari antrian.
 - **`/text tanya pertanyaan:<text_pertanyaan>`**
   Mengajukan pertanyaan apa pun ke AI. Bot akan menjawab berdasarkan konteks yang telah diberikan (info server, pencipta, dll.).
 - **`/text winner`**
