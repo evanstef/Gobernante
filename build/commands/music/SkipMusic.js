@@ -34,6 +34,12 @@ export default class SkipMusic extends Command {
             });
             return;
         }
+        if (serverQueue.songs.length === 1) {
+            await interaction.reply({
+                content: "⏭️ Tidak ada lagu selanjutnya.",
+            });
+            return;
+        }
         const nextSong = serverQueue.songs[1];
         const success = player.stop();
         if (success) {

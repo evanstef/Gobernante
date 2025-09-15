@@ -1,4 +1,4 @@
-import { ChatInputCommandInteraction, EmbedBuilder, GuildMember, Message, PermissionFlagsBits, } from "discord.js";
+import { ApplicationCommandOptionType, ChatInputCommandInteraction, EmbedBuilder, GuildMember, Message, PermissionFlagsBits, } from "discord.js";
 import Command from "../../base/classes/Command.js";
 import Category from "../../base/enums/Category.js";
 export default class QueueMusic extends Command {
@@ -11,37 +11,27 @@ export default class QueueMusic extends Command {
             dm_permission: false,
             cooldown: 5,
             client: client,
-            options: [],
-        });
-    }
-    async Execute(interaction, args) {
-        if (!interaction.guild || !(interaction.member instanceof GuildMember))
-            return;
-        const voiceChannel = interaction.member.voice.channel;
-        if (!voiceChannel) {
-            await interaction.reply({
-                content: "Masuk voice dulu lah bang!",
-                ephemeral: true,
-            });
-            return;
-        }
-        const serverQueue = this.client.queues.get(interaction.guild.id);
-        if (!serverQueue || serverQueue.songs.length === 0) {
-            await interaction.reply({
-                content: "Mana ada lagu nya woi!.",
-                ephemeral: true,
-            });
-            return;
-        }
-        const queueString = serverQueue.songs
-            .map((song, index) => `${index + 1}. ${index === 0 ? song.title + " - **(Lagu Saat Ini)**" : song.title}`)
-            .join("\n");
-        const embedMessage = new EmbedBuilder()
-            .setTitle("📜 Antrian Musik Gobernante :")
-            .setDescription(queueString)
-            .setColor("Blue");
-        await interaction.reply({
-            embeds: [embedMessage],
+            options: [
+                {
+                    name: "view",
+                    description: "Melihat daftar antrean lagu.",
+                    type: ApplicationCommandOptionType.Subcommand,
+                },
+                {
+                    name: "remove",
+                    description: "Menghapus lagu tertentu dari antrean.",
+                    type: ApplicationCommandOptionType.Subcommand,
+                    options: [
+                        {
+                            name: "nomor",
+                            description: "Nomor urut lagu di antrean yang akan dihapus.",
+                            type: ApplicationCommandOptionType.Integer,
+                            required: true,
+                            min_value: 1,
+                        },
+                    ],
+                },
+            ],
         });
     }
 }

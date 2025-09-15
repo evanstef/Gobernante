@@ -2,7 +2,7 @@
 </h1>
 Jadi, bot ini namanya Gobernante, artinya 'penguasa' pake bahasa Spanyol. Awalnya, gw bikin bot ini buat seru-seruan aja sama temen-temen pas maen Valorant. Tujuannya simpel: buat generate trash talk otomatis buat ngatain musuh, mau kita lagi menang ataupun kalah.
 
-Tapi lama-lama gw kembangin biar jadi bot 'penguasa' serba bisa di server. Sekarang fiturnya ada buat nyambut member baru, ngasih tau kalo ada yang ganti nama atau avatar, sampe bisa muter lagu, dan juga lu bisa tanya apa aja sama bot ini ya simple sih cuman pake API Google AI Studio.sebenarnya bot kyk gini udh banyak tapi gw pengen punya satu bot buatan sendiri yang bisa ngelakuin semuanya, jadi server gw sama temen-temen cukup pake satu bot ini aja, hehe.
+Tapi lama-lama gw kembangin biar jadi bot 'penguasa' serba bisa di server. Sekarang fiturnya ada buat nyambut member baru, ngasih tau kalo ada yang ganti nama atau avatar, sampe bisa muter lagu, bisa tanya apa aja sama bot ini ya simple sih cuman pake API Google AI Studio, dan masih banyak lagi. sebenarnya bot kyk gini udh banyak tapi gw pengen punya satu bot buatan sendiri yang bisa ngelakuin semuanya, jadi server gw sama temen-temen cukup pake satu bot ini aja, hehe.
 
 <span style="color: yellow;">_Catatan: Gw sengaja gak pake hosting luar buat bot ini, jadi murni jalan di PC lokal gw pake Docker. Alasannya simpel: susah cari hosting gratisan wkwkwk mau gratisan. Kalaupun ada, RAM yang ditawarin kecil banget, gak bakal kuat buat nampung semua fitur bot yang mungkin nantinya makin banyak.\*\*_</span>
 
@@ -22,6 +22,8 @@ Tapi lama-lama gw kembangin biar jadi bot 'penguasa' serba bisa di server. Sekar
 
 - **Ranking**: Bot dapat menampilkan peringkat member di server semakin banyak mereka mengirim pesan, semakin tinggi level membernya.
 
+- **Pick Role (Reaction Role)**: Bot dapat memilih role berdasarkan reaksi emoji yang ditekan oleh member di server.
+
 - **Perintah Ping**: Bot memiliki perintah ping yang bisa digunakan untuk mengecek latency (jeda waktu) bot.
 
 - **Log Aktivitas Pengguna**: Bot dapat mencatat aktivitas pengguna, seperti saat mereka memperbarui username atau avatar mereka.
@@ -34,6 +36,8 @@ Gw pake "/" command yak soalnya kalo pake "!" udah bot versi lama yang begitu ke
   Menetapkan channel di mana bot akan mengirim pesan saat ada anggota yang bergabung atau keluar.(**Admin Only**)
 - **`/user-logs setup channel:<channel>`**
   Menetapkan channel di mana bot akan mengirim notifikasi jika ada anggota yang mengubah nickname, username, atau avatar.(**Admin Only**)
+- **`/reaction-role add channel:<channel> message_id:<message_id> emoji:<emoji> role:<role>`**
+  Menambahkan aturan reaction role baru.(**Admin Only**)
 - **`/serverlist`**
   Menampilkan daftar server di mana bot berada.(**Owner Only**)
 - **`/play song:<judul_atau_url_youtube>`**
