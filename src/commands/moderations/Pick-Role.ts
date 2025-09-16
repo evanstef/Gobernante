@@ -79,6 +79,7 @@ export default class ReactionRoleCommand extends Command {
       await ReactionRole.create({
         guildId: interaction.guild.id,
         messageId: messageId,
+        channelId: channel.id,
         emoji: emoji,
         roleId: role.id,
       });

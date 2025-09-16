@@ -21,6 +21,7 @@ export default class MessageReactionAdd extends Event {
     const rule = await ReactionRole.findOne({
       guildId: reaction.message.guildId,
       messageId: reaction.message.id,
+      channelId: reaction.message.channelId,
       emoji: reaction.emoji.name,
     });
 
