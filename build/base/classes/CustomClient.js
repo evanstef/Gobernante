@@ -2,14 +2,16 @@ import { Client, Collection, GatewayIntentBits } from "discord.js";
 import { CLIENT_ID, GUILD_ID, MONGO_URL, TOKEN } from "../../variable.js";
 import Handler from "./Handler.js";
 import { connect } from "mongoose";
+import { Kazagumo, Plugins } from "kazagumo";
+import { Connectors } from "shoukaku";
+import { soundcloud } from "play-dl";
 export default class CustomClient extends Client {
     handler;
     config;
     commands;
     subCommands;
     cooldowns;
-    queues;
-    players;
+    manager;
     constructor() {
         super({
             intents: [
@@ -28,8 +30,20 @@ export default class CustomClient extends Client {
             guildId: GUILD_ID,
             mongoUrl: MONGO_URL,
         };
-        this.queues = new Collection();
-        this.players = new Collection();
+        this.manager = new Kazagumo({
+            defaultSearchEngine: "soundcloud",
+            send: (guildId, payload) => {
+                const guild = this.guilds.cache.get(guildId);
+                if (guild)
+                    guild.shard.send(payload);
+            },
+        }, new Connectors.DiscordJS(this), [
+            {
+                name: "gobernante-lavalink",
+                url: `${process.env.LAVALINK_HOST}:${process.env.LAVALINK_PORT}`,
+                auth: process.env.LAVALINK_PASSWORD,
+            },
+        ]);
         this.handler = new Handler(this);
         this.commands = new Collection();
         this.subCommands = new Collection();

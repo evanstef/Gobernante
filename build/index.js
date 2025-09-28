@@ -1,4 +1,8 @@
 import "dotenv/config";
 import CustomClient from "./base/classes/CustomClient.js";
-new CustomClient().Init();
+import play from "play-dl";
+import KazagumoEvents from "./base/functions/KazagumoEvents.js";
+const client = new CustomClient();
+KazagumoEvents(client);
+client.Init();
 //# sourceMappingURL=index.js.map

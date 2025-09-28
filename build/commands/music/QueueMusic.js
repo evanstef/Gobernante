@@ -11,27 +11,43 @@ export default class QueueMusic extends Command {
             dm_permission: false,
             cooldown: 5,
             client: client,
-            options: [
-                {
-                    name: "view",
-                    description: "Melihat daftar antrean lagu.",
-                    type: ApplicationCommandOptionType.Subcommand,
-                },
-                {
-                    name: "remove",
-                    description: "Menghapus lagu tertentu dari antrean.",
-                    type: ApplicationCommandOptionType.Subcommand,
-                    options: [
-                        {
-                            name: "nomor",
-                            description: "Nomor urut lagu di antrean yang akan dihapus.",
-                            type: ApplicationCommandOptionType.Integer,
-                            required: true,
-                            min_value: 1,
-                        },
-                    ],
-                },
-            ],
+            options: [],
+        });
+    }
+    async Execute(interaction, args) {
+        if (!interaction.guild || !(interaction.member instanceof GuildMember))
+            return;
+        const voiceChannel = interaction.member.voice.channel;
+        if (!voiceChannel) {
+            await interaction.reply({
+                content: "Masuk voice dulu lah bang!",
+                ephemeral: true,
+            });
+            return;
+        }
+        const player = this.client.manager.players.get(interaction.guild.id);
+        if (!player || !player.queue.current) {
+            await interaction.reply({
+                content: "Tidak ada musik yang sedang diputar atau antrean kosong.",
+                ephemeral: true,
+            });
+            return;
+        }
+        const nowPlaying = player.queue.current;
+        const upcomingQueue = player.queue;
+        const queueDescription = upcomingQueue
+            .slice(0, 10)
+            .map((track, index) => `**${index + 1}.** [${track.title}](${track.uri})`)
+            .join("\n");
+        const embedMessage = new EmbedBuilder()
+            .setTitle("📜 Antrian Musik Gobernante")
+            .setColor("Blue")
+            .setThumbnail(nowPlaying.thumbnail || null)
+            .setDescription(`**▶️ Sedang Diputar:**\n[${nowPlaying.title}](${nowPlaying.uri})\n\n` +
+            `**Antrean Berikutnya:**\n${queueDescription || "Tidak ada lagu lain di antrean."}`)
+            .setFooter({ text: `Total ${player.queue.size} lagu di antrean.` });
+        await interaction.reply({
+            embeds: [embedMessage],
         });
     }
 }

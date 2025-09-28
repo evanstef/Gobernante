@@ -40,16 +40,14 @@ Gw pake "/" command yak soalnya kalo pake "!" udah bot versi lama yang begitu ke
   Menambahkan aturan reaction role baru.(**Admin Only**)
 - **`/serverlist`**
   Menampilkan daftar server di mana bot berada.(**Owner Only**)
-- **`/play song:<judul_atau_url_youtube>`**
+- **`/play song:<judul_atau_url_soundcloud>`**
   Memutar musik berdasarkan prompt yang diberikan.
 - **`/stop`**
   Menghentikan musik yang sedang diputar.
 - **`/skip`**
   Melewati musik yang sedang diputar.
-- **`/queue view`**
+- **`/queue`**
   Menampilkan daftar musik yang sedang diputar di antrian.
-- **`/queue remove nomor:<nomor_urut_lagu>`**
-  Menghapus lagu tertentu dari antrian.
 - **`/text tanya pertanyaan:<text_pertanyaan>`**
   Mengajukan pertanyaan apa pun ke AI. Bot akan menjawab berdasarkan konteks yang telah diberikan (info server, pencipta, dll.).
 - **`/text winner`**
@@ -72,6 +70,8 @@ Gw pake "/" command yak soalnya kalo pake "!" udah bot versi lama yang begitu ke
 - Discord Bot Token.
 - API Google AI Studio.
 - FFmpeg.
+- Lavalink.
+- Kazagumo.
 - Docker.
 - MongoDB Atlas Url Database.
 
@@ -85,7 +85,6 @@ Gw pake "/" command yak soalnya kalo pake "!" udah bot versi lama yang begitu ke
 2.  **Install Semua Dependensi**
     ```bash
     npm install
-    npm i --save-dev @types/yt-search
     ```
 3.  **Buat file `.env` di dalam root folder **
 
@@ -95,6 +94,10 @@ Gw pake "/" command yak soalnya kalo pake "!" udah bot versi lama yang begitu ke
     GEMINI_API_KEY=<API_KEY>
     DATABASE_URL=<mongodb_url>
     OWNER_ID=<DISCORD_OWNER_ID>
+    LAVALINK_HOST=<Lavalink_Host>
+    LAVALINK_PORT=<Lavalink_Port>
+    LAVALINK_PASSWORD=<Lavalink_Password>
+    SOUNDCLOUD_CLIENT_ID=<Soundcloud_Client_ID>
     ```
 
 4.  **Udah deh jalankan bot**
@@ -117,13 +120,16 @@ Gw pake "/" command yak soalnya kalo pake "!" udah bot versi lama yang begitu ke
     GEMINI_API_KEY=<API_KEY>
     DATABASE_URL=<mongodb_url>
     OWNER_ID=<DISCORD_OWNER_ID>
+    LAVALINK_HOST=<Lavalink_Host>
+    LAVALINK_PORT=<Lavalink_Port>
+    LAVALINK_PASSWORD=<Lavalink_Password>
+    SOUNDCLOUD_CLIENT_ID=<Soundcloud_Client_ID>
     ```
 
 3.  **Udah deh jalankan bot**
 
     ```bash
-    docker build -t <nama_image> .
-    docker run --name <nama_container> --restart unless-stopped -d <nama_image>
+    docker compose up --build -d
     ```
 
     **Catatan:**
@@ -134,6 +140,11 @@ Gw pake "/" command yak soalnya kalo pake "!" udah bot versi lama yang begitu ke
     - Ganti `<DISCORD_CLIENT_ID>` dengan ID bot Discord Anda.
     - Ganti `<API_KEY>` dengan API key AI Studio Anda.
     - Ganti `<mongodb_url>` dengan URL database MongoDB Atlas Anda.
+    - Ganti `<DISCORD_OWNER_ID>` dengan ID pemilik server Discord Anda.
+    - Ganti `<Lavalink_Host>` dengan host Lavalink Anda.
+    - Ganti `<Lavalink_Port>` dengan port Lavalink Anda.
+    - Ganti `<Lavalink_Password>` dengan password Lavalink Anda.
+    - Ganti `<Soundcloud_Client_ID>` dengan ID klien Soundcloud Anda.
 
 ## Terakhir
 

@@ -37,20 +37,11 @@ export default class StopMusic extends Command {
       return;
     }
 
-    const serverQueue = this.client.queues.get(interaction.guild.id);
-    const player = this.client.players.get(interaction.guild.id);
+    const player = this.client.manager.players.get(interaction.guild.id);
 
-    if (!serverQueue || !player) {
-      await interaction.reply({
-        content: "Mana ada lagu nya woi!.",
-        ephemeral: true,
-      });
-      return;
+    if (player) {
+      player.destroy();
     }
-
-    serverQueue.songs = [];
-
-    player.stop();
 
     await interaction.reply({
       content: "⏹️ Musik telah dihentikan dan antrean dibersihkan.",

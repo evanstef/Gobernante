@@ -25,34 +25,17 @@ export default class SkipMusic extends Command {
             });
             return;
         }
-        const serverQueue = this.client.queues.get(interaction.guild.id);
-        const player = this.client.players.get(interaction.guild.id);
-        if (!serverQueue || !player || serverQueue.songs.length === 0) {
-            await interaction.reply({
-                content: "Request lagu dulu lah bang!!.",
-                ephemeral: true,
-            });
-            return;
-        }
-        if (serverQueue.songs.length === 1) {
+        const player = this.client.manager.players.get(interaction.guild.id);
+        if (!player) {
             await interaction.reply({
                 content: "⏭️ Tidak ada lagu selanjutnya.",
             });
             return;
         }
-        const nextSong = serverQueue.songs[1];
-        const success = player.stop();
-        if (success) {
-            await interaction.reply({
-                content: `⏭️ Lanjutt ke... **${nextSong.title}**.`,
-            });
-        }
-        else {
-            await interaction.reply({
-                content: "Gagal melewati lagu.",
-                ephemeral: true,
-            });
-        }
+        player.skip();
+        await interaction.reply({
+            content: "⏭️ Lagu selanjutnya.",
+        });
     }
 }
 //# sourceMappingURL=SkipMusic.js.map

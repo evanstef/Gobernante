@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  bot:
+    image: gobernante
+    build: .
+    restart: unless-stopped
+    container_name: gobernante-bot
+    env_file: .env
+    depends_on:
+      lavalink:
+        condition: service_healthy
+  lavalink:
+    image: ghcr.io/lavalink-devs/lavalink:4
+    container_name: gobernante-lavalink
+    restart: always
+    ports:
+      - "2333:2333"
+    volumes:
+      - ./application.yml:/opt/Lavalink/application.yml
+    environment:
+      - LAVALINK_PASSWORD=${LAVALINK_PASSWORD}
+      - SOUNDCLOUD_CLIENT_ID=${SOUNDCLOUD_CLIENT_ID}
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "curl",
+          "-f",
+          "-H",
+          "Authorization: ${LAVALINK_PASSWORD}",
+          "http://localhost:2333/v4/info",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10

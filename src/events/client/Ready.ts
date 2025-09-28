@@ -15,6 +15,7 @@ export default class Ready extends Event {
 
   async Execute(): Promise<void> {
     console.log(`${this.client.user?.displayName} is online`);
+    console.log("Mencoba terhubung ke Lavalink...");
 
     const commands: object[] = this.GetJson(this.client.commands);
 
